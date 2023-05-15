@@ -4,7 +4,7 @@ type MessageProps = ChatMessage & {}
 
 const Message = ({ id, text, timeStamp, meAuthor }: MessageProps) => {
   return (
-    <div className={`chat ${meAuthor ? 'chat-end' : 'chat-start'} w-1/2`}>
+    <div className={`chat ${meAuthor ? 'chat-end' : 'chat-start'} w-full lg:w-1/2`}>
       <div className="chat-header">
         <time className="text-xs opacity-50">{timeStamp}</time>
       </div>

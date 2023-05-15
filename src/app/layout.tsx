@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={jetBrains.className}>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-neutral-900">
+        <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-24 bg-neutral-900">
           <Providers>{children}</Providers>
         </main>
       </body>

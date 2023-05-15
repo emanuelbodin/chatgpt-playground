@@ -77,6 +77,7 @@ const Prompt = () => {
         message += chunkValue
         setLastGeneratedMessage(message)
       }
+      setLastGeneratedMessage('')
       setAllMessages((prev) => [
         {
           meAuthor: false,
@@ -93,9 +94,11 @@ const Prompt = () => {
     setLoading(false)
   }
 
+  const messages = [...allMessages]
+
   return (
     <div className="w-full flex flex-col items-center mt-4">
-      <div className="w-1/3 my-4 flex flex-col items-center">
+      <div className="w-full lg:w-1/3 my-4 flex flex-col items-center">
         <form className="w-full flex flex-col items-center gap-4" onSubmit={handleSubmit(generate)}>
           <textarea
             rows={4}
@@ -116,7 +119,7 @@ const Prompt = () => {
           timeStamp={formatter.format(new Date())}
         />
       ) : null}
-      <MessageList messages={allMessages} />
+      <MessageList messages={messages} />
     </div>
   )
 }
